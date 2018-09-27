@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ercore_institution
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ercore_migration
+label: 'ERCore Institution'
+source:
+  plugin: d7_node
+  node_type: er_institution
+process:
+  uid: node_uid
+  created: created
+  changed: changed
+  langcode:
+    plugin: default_value
+    default_value: en
+  title: title
+  field_ercore_inst_abbr: field_er_inst_abbreviation
+  body/value: body/value
+  body/format:
+    plugin: default_value
+    default_value: basic_html
+  field_ercore_inst_country: field_er_inst_country
+  field_ercore_inst_category: field_er_inst_category
+  field_ercore_inst_type: field_er_inst_type
+  field_ercore_inst_participating: field_er_inst_participating
+  field_ercore_inst_link: field_er_inst_link
+  status: status
+  path/pathauto:
+    plugin: default_value
+    default_value: 0
+  path/alias: url_alias
+destination:
+  plugin: 'entity:node'
+migration_dependencies:
+  required:
+    - ercore_user
+  optional: {  }

@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ercore_migration
+label: 'ERCore Migration'
+description: 'Managing the migration of Drupal 7 ERCore data to Drupal 8.'
+source_type: 'Drupal 7'
+module: null
+shared_configuration:
+  source:
+    key: migration

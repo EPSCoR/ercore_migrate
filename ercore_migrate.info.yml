@@ -1,0 +1,11 @@
+name: 'ERCore Migration'
+description: 'D7 to D8 Migration for ERCore EPSCoR data.'
+type: module
+project: ercore
+package: ERCore
+core: 8.x
+dependencies:
+  - migrate
+  - migrate_drupal
+  - migrate_plus
+version: 8.x-1.0
