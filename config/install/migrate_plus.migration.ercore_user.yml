@@ -36,11 +36,9 @@ process:
   field_ercore_user_doc_act: doc_act
   field_ercore_user_master_act: master_act
   field_ercore_user_under_act: under_act
-  field_ercore_user_advisor_mentor: mentor
   field_ercore_user_doc_ant: doc_ant
   field_ercore_user_master_ant: master_ant
   field_ercore_user_under_ant: under_ant
-  field_ercore_user_first_gen: first_gen
   field_ercore_user_collecting: collecting
   field_ercore_user_epscore_paid: epscor_paid
   field_ercore_user_boards: boards
@@ -48,40 +46,61 @@ process:
     plugin: migration_lookup
     migration:
       - ercore_component
-    source: tid
+    source: component
   field_ercore_user_data_desc: data_desc
-  field_ercore_user_data_url: data_url
+  field_ercore_user_data_url/url: data_url
   field_ercore_user_department: department
   field_ercore_user_role_desc: role_desc
   field_ercore_user_disabilities: disabilities
   field_ercore_user_fac_support: fac_support
   field_ercore_user_part_160: part_160
-  field_ercore_user_employee_id: employee_id
-  field_ercore_user_ethnicity: ethnicity
+  field_ercore_user_employee_id: ''
+  field_ercore_user_ethnicity:
+    plugin: static_map
+    bypass: true
+    source: ethnicity
+    map:
+      - 'Hispanic or Latino'
+      - 'Not Hispanic or Latino'
+      - Unknown
   field_ercore_user_funding_src: funding_src
-  field_ercore_user_gender: gender
+  field_ercore_user_gender:
+    plugin: static_map
+    bypass: true
+    source: gender
+    map:
+      - Male
+      - Female
   field_ercore_user_data_mgr: data_mgr
-  field_ercore_user_rcr_status: rcr_status
   field_ercore_user_hired_date: hired_date
   field_ercore_user_lead_team: lead_team
   field_ercore_user_data_ongoing: data_ongoing
   field_ercore_user_mentor_plan_dt: mentor_plan_date
   field_ercore_user_direct_fund: direct_fund
   field_ercore_user_effort_months: effort_months
-  field_ercore_senior_role: senior_role
-  field_ercore_user_partic_inst:
-    plugin: migration_lookup
-    migration:
-      - ercore_institution
-    source: nid
+  field_ercore_senior_role:
+    plugin: static_map
+    bypass: true
+    source: senior_role
+    map:
+      'Faculty participant (or equivalent)': faculty
+      'Technical support staff': technical
+      'Non-technical support staff': non-technical
+      'Post Doc': post-doc
+      'Graduate student': graduate
+      'Undergraduate student': undergraduate
+      Evaluation: evaluation
+      Other: other
+  field_ercore_user_partic_inst: institution
   field_ercore_user_end: end
   field_ercore_user_start: start
   field_ercore_user_phone_mobile: phone_mobile
   field_ercore_user_phone_work: phone_work
   field_ercore_user_mentor_plan: mentor_plan
-  field_ercore_user_link: link
+  field_ercore_user_link/url: link
   field_ercore_user_program: program
   field_ercore_user_race: race
+  field_ercore_user_rcr_status: rcr_status
   field_ercore_user_rcr_per: rcr_per
   field_ercore_user_rcr_per_up: rcr_per_up
   field_ercore_user_rcr_on: rcr_on
