@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies: {  }
+id: ercore_engagement
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: ercore_migration
+label: 'ERCore Event Engagements'
+source:
+  plugin: d7_node
+  node_type: er_engagement
+process:
+  field_ercore_ee_ari_fac_f:
+    plugin: default_value
+    default_value: 4
+destination:
+  plugin: 'entity_reference_revisions:paragraph'
+  default_bundle: ercore_external_engagement
+migration_dependencies:
+  required: {  }
+  optional: {  }

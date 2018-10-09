@@ -25,8 +25,8 @@ process:
   title: title
   body: body
   "body/0/format":
-      plugin: default_value
-      default_value: basic_html
+    plugin: default_value
+    default_value: basic_html
   field_ercore_ev_document: field_er_event_flier
   field_ercore_components: field_er_components
   field_ercore_ev_date_start:
@@ -40,7 +40,7 @@ process:
   field_ercore_event_type:
     plugin: static_map
     bypass: true
-    source: senior_role
+    source: field_er_event_type
     map:
       0: Brown Bag
       1: Meeting
@@ -49,9 +49,6 @@ process:
       4: Seminar
       5: Retreat
       6: Other
-  field_ercore_ev_engagement:
-    plugin: engagement
-    source: nid
   field_ercore_ev_reminders: field_er_event_reminders
   status: status
   path/pathauto:
