@@ -12,6 +12,7 @@ source:
   plugin: d7_node
   node_type: er_engagement
 process:
+  id: nid
   field_ercore_ee_ari_fac_f:
     plugin: default_value
     default_value: 4
