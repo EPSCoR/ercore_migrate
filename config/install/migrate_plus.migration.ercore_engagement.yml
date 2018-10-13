@@ -13,9 +13,66 @@ source:
   node_type: er_engagement
 process:
   id: nid
-  field_ercore_ee_ari_fac_f:
+  field_ercore_ee_ari_fac_f: field_er_ari_fac_female
+  field_ercore_ee_ari_fac_m: field_er_ari_fac_male
+  field_ercore_ee_ari_fac_t: field_er_ari_fac_total
+  field_ercore_ee_ari_fac_u: field_er_ari_fac_und
+  field_ercore_ee_ari_fac_mn: field_er_ari_fac_urm
+  field_ercore_ee_ari_stu_f: field_er_ari_stu_female
+  field_ercore_ee_ari_stu_m: field_er_ari_stu_male
+  field_ercore_ee_ari_stu_t: field_er_ari_stu_total
+  field_ercore_ee_ari_stu_u: field_er_ari_stu_und
+  field_ercore_ee_ari_stu_mn: field_er_ari_stu_urm
+  field_ercore_ee_disable_file_alt:
     plugin: default_value
-    default_value: 4
+    default_value: 1
+  field_ercore_ee_k12_dir_f: field_er_k12i_stud_female
+  field_ercore_ee_k12_dir_m: field_er_k12i_stud_male
+  field_ercore_ee_k12_dir_t: field_er_k12i_stud_total
+  field_ercore_ee_k12_dir_u: field_er_k12i_stud_und
+  field_ercore_ee_k12_dir_mn: field_er_k12i_stud_urm
+  field_ercore_ee_k12_ttr_f: field_er_k12i_stut_female
+  field_ercore_ee_k12_ttr_m: field_er_k12i_stut_male
+  field_ercore_ee_k12_ttr_u: field_er_k12i_stut_und
+  field_ercore_ee_k12_ttr_mn: field_er_k12i_stut_urm
+  field_ercore_ee_k12_ttr_t: field_er_k12i_stut_total
+  field_ercore_ee_k12_tch_f: field_er_k12i_tec_female
+  field_ercore_ee_k12_tch_m: field_er_k12i_tec_male
+  field_ercore_ee_k12_tch_u: field_er_k12i_tec_und
+  field_ercore_ee_k12_tch_mn: field_er_k12i_tec_urm
+  field_ercore_ee_k12_tch_t: field_er_k12i_tec_total
+  field_ercore_ee_msi_fac_f: field_er_msi_fac_female
+  field_ercore_ee_msi_fac_m: field_er_msi_fac_male
+  field_ercore_ee_msi_fac_t: field_er_msi_fac_total
+  field_ercore_ee_msi_fac_u: field_er_msi_fac_und
+  field_ercore_ee_msi_fac_mn: field_er_msi_fac_urm
+  field_ercore_ee_msi_stu_f: field_er_msi_stu_female
+  field_ercore_ee_msi_stu_m: field_er_msi_stu_male
+  field_ercore_ee_msi_stu_t: field_er_msi_stu_total
+  field_ercore_ee_msi_stu_u: field_er_msi_stu_und
+  field_ercore_ee_msi_stu_mn: field_er_msi_stu_urm
+  field_ercore_ee_other_f: field_er_oth_female
+  field_ercore_ee_other_m: field_er_oth_male
+  field_ercore_ee_other_t: field_er_oth_total
+  field_ercore_ee_other_u: field_er_oth_und
+  field_ercore_ee_other_mn: field_er_oth_urm
+  field_ercore_ee_pui_fac_f: field_er_pui_fac_female
+  field_ercore_ee_pui_fac_m: field_er_pui_fac_male
+  field_ercore_ee_pui_fac_t: field_er_pui_fac_total
+  field_ercore_ee_pui_fac_u: field_er_pui_fac_und
+  field_ercore_ee_pui_fac_mn: field_er_pui_fac_urm
+  field_ercore_ee_pui_stu_f: field_er_pui_stu_female
+  field_ercore_ee_pui_stu_m: field_er_pui_stu_male
+  field_ercore_ee_pui_stu_t: field_er_pui_stu_total
+  field_ercore_ee_pui_stu_u: field_er_pui_stu_und
+  field_ercore_ee_pui_stu_mn: field_er_pui_stu_urm
+  field_ercore_ee_t_t: field_er_tot_total
+  field_ercore_ee_t_f: field_er_tot_female
+  field_ercore_ee_t_m: field_er_tot_male
+  field_ercore_ee_t_u: field_er_tot_und
+  field_ercore_ee_t_mn: field_er_tot_urm
+  field_ercore_ee_excel: field_er_ee_file
+  field_ercore_ee_estimated: field_er_estimated
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   default_bundle: ercore_external_engagement
