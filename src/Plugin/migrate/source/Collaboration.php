@@ -4,18 +4,15 @@ namespace Drupal\ercore_migrate\Plugin\migrate\source;
 
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
-use Drupal\Core\Database\Database;
-use Drupal\node\Entity\Node;
-use Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * Source plugin for the Users.
  *
  * @MigrateSource(
- *   id = "engagement_event"
+ *   id = "collaboration"
  * )
  */
-class EngagementEvent extends SqlBase {
+class Collaboration extends SqlBase {
 
   /**
    * {@inheritdoc}
@@ -31,42 +28,22 @@ class EngagementEvent extends SqlBase {
       'created',
       'changed',
     ]);
-    $query->condition('n.type', 'er_event');
+    $query->condition('n.type', 'er_collaboration');
 
     // Dates.
-    $query->addField('date', 'field_er_cal_event_date_value', 'date_start');
-    $query->addField('date', 'field_er_cal_event_date_value2', 'date_end');
-    $query->leftJoin('field_data_field_er_cal_event_date', 'date', "date.entity_id = n.nid");
+    $query->addField('date', 'field_er_collaboration_dates_value', 'date_start');
+    $query->addField('date', 'field_er_collaboration_dates_value2', 'date_end');
+    $query->leftJoin('field_data_field_er_collaboration_dates', 'date', "date.entity_id = n.nid");
 
     // Components.
     $query->addField('c', 'field_er_components_target_id', 'component');
     $query->leftJoin('field_data_field_er_components', 'c', "c.entity_id = n.nid AND c.bundle = :bundle",
-      [':bundle' => 'er_event']
+      [':bundle' => 'er_collaboration']
     );
-
-    // Organizers.
-    $query->addField('o', 'field_er_user_entity_reference_target_id', 'organizers');
-    $query->leftJoin('field_data_field_er_user_entity_reference', 'o', "o.entity_id = n.nid");
-
-    // Url.
-    $query->addField('u', 'field_er_url_value', 'url');
-    $query->leftJoin('field_data_field_er_url', 'u', "u.entity_id = n.nid");
 
     // Body.
     $query->addField('b', 'body_value', 'body');
     $query->leftJoin('field_data_body', 'b', "b.entity_id = n.nid");
-
-    // Type.
-    $query->addField('t', 'field_er_event_type_value', 'type');
-    $query->leftJoin('field_data_field_er_event_type', 't', "t.entity_id = n.nid");
-
-    // EPSCoR.
-    $query->addField('e', 'field_er_event_reminders_value', 'epscor');
-    $query->leftJoin('field_data_field_er_event_reminders', 'e', "e.entity_id = n.nid");
-
-    // File.
-    $query->addField('f', 'field_er_event_flier_fid', 'file');
-    $query->leftJoin('field_data_field_er_event_reminders', 'f', "f.entity_id = n.nid");
 
     return $query;
   }
@@ -126,7 +103,8 @@ class EngagementEvent extends SqlBase {
    *   Returns string.
    */
   public function processDates($date) {
-    return str_replace(' ', 'T', $date);
+    $new_date = explode('T', $date);
+    return $new_date[0];
   }
 
 }
