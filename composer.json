@@ -1,0 +1,21 @@
+{
+  "name": "epscor/ercore_migrate",
+  "description": "Migrating ERCore data from Drupal 7 to Drupal 8.",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    }
+  ],
+  "require": {
+    "drupal/migrate_plus": "^4.0",
+    "epscor/ercore": "0.33"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true
+  }
+}
