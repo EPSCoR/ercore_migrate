@@ -1,4 +1,4 @@
-# ercore_migrate
+# ERCore Migrate
 Migrating ERCore data from Drupal 7 to Drupal 8. Customization of fields per site is expected.
 This is intended to be used as a template for ERCore migrations. Since all Drupal 7 ERCore (ER) modules appear to be
 customized, each migration will be a unique process. Download this module and customize it as necessary to work with your
