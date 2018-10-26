@@ -57,5 +57,8 @@ process:
 destination:
   plugin: 'entity:node'
 migration_dependencies:
-  required: {  }
+  required:
+    - ercore_engagement
+    - ercore_file
+    - ercore_user
   optional: {  }

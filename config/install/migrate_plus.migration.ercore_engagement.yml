@@ -77,5 +77,6 @@ destination:
   plugin: 'entity_reference_revisions:paragraph'
   default_bundle: ercore_external_engagement
 migration_dependencies:
-  required: {  }
+  required:
+    - ercore_file
   optional: {  }

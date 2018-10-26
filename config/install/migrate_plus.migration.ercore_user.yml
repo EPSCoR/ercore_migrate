@@ -111,5 +111,8 @@ process:
 destination:
   plugin: 'entity:user'
 migration_dependencies:
-  required: {  }
+  required:
+    - ercore_component
+    - ercore_file
+    - ercore_institution
   optional: {  }
