@@ -11,7 +11,7 @@
   ],
   "require": {
     "drupal/migrate_plus": "^4.0",
-    "epscor/ercore": "0.33"
+    "epscor/ercore": "0.34"
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
