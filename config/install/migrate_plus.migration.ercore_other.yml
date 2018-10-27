@@ -25,9 +25,9 @@ process:
   title: title
   field_ercore_op_date:
     plugin: simple_date
-    source: "field_er_other_product_date/0/value"
+    source: field_er_other_product_date/0/value
   field_ercore_op_description: field_er_description
-  "field_ercore_op_description/0/format":
+  field_ercore_op_description/0/format:
     plugin: default_value
     default_value: basic_html
   field_ercore_organizer: field_er_user_entity_reference

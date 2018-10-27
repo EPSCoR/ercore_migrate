@@ -12,6 +12,8 @@ source:
   plugin: d7_file
   constants:
     source_base_path: /var/www/hi-reporting/web/sites/default/files/migrate_files/
+process: null
+destination: null
 migration_dependencies:
   required:
     - ercore_user

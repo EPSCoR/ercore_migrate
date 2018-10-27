@@ -24,14 +24,14 @@ process:
     default_value: en
   title: title
   body: field_er_news_text
-  "body/0/format":
-      plugin: default_value
-      default_value: basic_html
+  body/0/format:
+    plugin: default_value
+    default_value: basic_html
   field_ercore_components: field_er_components
   field_ercore_organizer: field_er_user_entity_reference
   field_ercore_hi_date:
     plugin: simple_date
-    source: "field_er_news_date/0/value"
+    source: field_er_news_date/0/value
   field_ercore_hi_image: field_er_news_image
   status: status
   path/pathauto:

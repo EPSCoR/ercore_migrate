@@ -27,7 +27,7 @@ process:
     default_value: en
   title: title
   body: body
-  "body/0/format":
+  body/0/format:
     plugin: default_value
     default_value: basic_html
   field_ercore_components: components

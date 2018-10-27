@@ -27,24 +27,24 @@ process:
   field_ercore_pp_award_amount: field_er_award_amount
   field_ercore_pp_award_start:
     plugin: simple_date
-    source: "field_er_proposal_date/0/value"
+    source: field_er_proposal_date/0/value
   field_ercore_pp_award_end:
     plugin: simple_date
-    source: "field_er_proposal_date/0/value2"
+    source: field_er_proposal_date/0/value2
   body: body
-  "body/0/format":
+  body/0/format:
     plugin: default_value
     default_value: basic_html
   field_ercore_components: field_er_components
   field_ercore_pp_proposal_denied:
     plugin: simple_date
-    source: "field_er_proposal_denied/0/value"
+    source: field_er_proposal_denied/0/value
   field_ercore_pp_proposal_pending:
     plugin: simple_date
-    source: "field_er_proposal_pending/0/value"
+    source: field_er_proposal_pending/0/value
   field_ercore_pp_proposal_submit:
     plugin: simple_date
-    source: "field_er_proposal_submit/0/value"
+    source: field_er_proposal_submit/0/value
   field_ercore_organizer: field_er_epscor_pi_co_pi
   field_ercore_pp_support: field_er_support
   field_ercore_pp_location: field_er_location

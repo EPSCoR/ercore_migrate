@@ -26,7 +26,7 @@ process:
   field_ercore_organizer: field_er_epscor_pi_co_pi
   field_ercore_pb_nonepscor_aut:
     plugin: other_authors
-    source: "field_er_non_epscor_authors/0/value"
+    source: field_er_non_epscor_authors/0/value
   field_ercore_components: field_er_components
   field_ercore_pb_type: field_er_publication_type
   field_ercore_pb_journal_name: field_er_journal_name
@@ -40,12 +40,12 @@ process:
   field_ercore_pb_status: field_er_publication_status
   field_ercore_pb_submit_date:
     plugin: simple_date
-    source:  "field_er_publication_submit/0/value"
+    source: field_er_publication_submit/0/value
   field_ercore_pb_date:
     plugin: simple_date
-    source:  "field_er_publication_date/0/value"
+    source: field_er_publication_date/0/value
   body: body
-  "body/0/format":
+  body/0/format:
     plugin: default_value
     default_value: basic_html
   field_ercore_pb_rii_support: field_er_rii_support

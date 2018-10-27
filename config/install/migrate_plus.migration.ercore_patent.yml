@@ -24,22 +24,22 @@ process:
     default_value: en
   title: title
   field_ercore_pt_description: field_er_description
-  "field_ercore_pt_description/0/format":
+  field_ercore_pt_description/0/format:
     plugin: default_value
     default_value: basic_html
   field_ercore_pt_award:
     plugin: simple_date
-    source: "field_er_patent_award_date/0/value"
+    source: field_er_patent_award_date/0/value
   field_ercore_pt_disclosure:
     plugin: simple_date
-    source: "field_er_disclosure_date/0/value"
+    source: field_er_disclosure_date/0/value
   field_ercore_pt_filing:
     plugin: simple_date
-    source: "field_er_filing_date/0/value"
+    source: field_er_filing_date/0/value
   field_ercore_pt_licensed: field_er_patent_licensed
   field_ercore_pt_license:
     plugin: simple_date
-    source: "field_er_patent_date/0/value"
+    source: field_er_patent_date/0/value
   field_ercore_pt_licensee: field_er_patent_licensee
   field_ercore_pt_link: field_er_link
   status: status
@@ -50,7 +50,7 @@ process:
   field_ercore_organizer: field_er_user_entity_reference
   field_ercore_hn_date:
     plugin: simple_date
-    source: "field_er_award_date/0/value"
+    source: field_er_award_date/0/value
 destination:
   plugin: 'entity:node'
 migration_dependencies:

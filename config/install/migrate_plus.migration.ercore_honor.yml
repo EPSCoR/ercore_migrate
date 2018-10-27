@@ -24,7 +24,7 @@ process:
     default_value: en
   title: title
   body: body
-  "body/0/format":
+  body/0/format:
     plugin: default_value
     default_value: basic_html
   status: status
@@ -35,7 +35,7 @@ process:
   field_ercore_organizer: field_er_user_entity_reference
   field_ercore_hn_date:
     plugin: simple_date
-    source: "field_er_award_date/0/value"
+    source: field_er_award_date/0/value
 destination:
   plugin: 'entity:node'
 migration_dependencies:
