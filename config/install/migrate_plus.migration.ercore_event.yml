@@ -10,6 +10,8 @@ migration_group: ercore_migration
 label: 'ERCore Events'
 source:
   plugin: engagement_event
+  constants:
+    subpath: 'event'
 process:
   nid: nid
   uid:
@@ -30,7 +32,15 @@ process:
   body/0/format:
     plugin: default_value
     default_value: basic_html
-  field_ercore_ev_document: file
+  path_concat:
+    plugin: concat
+    delimiter: "||"
+    source:
+      - constants/subpath
+      - file
+  field_ercore_ev_document:
+    plugin: file_import
+    source: '@path_concat'
   field_ercore_components: components
   field_ercore_ev_date_start: date_start
   field_ercore_ev_date_end: date_end
@@ -56,9 +66,5 @@ process:
   path/alias: url_alias
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - ercore_engagement
-    - ercore_file
-    - ercore_user
-  optional: {  }
+  subpath: 'hit?'
+migration_dependencies: { }

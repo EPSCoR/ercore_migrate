@@ -38,7 +38,4 @@ process:
     source: field_er_award_date/0/value
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - ercore_user
-  optional: {  }
+migration_dependencies: { }

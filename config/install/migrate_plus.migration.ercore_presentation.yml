@@ -11,6 +11,8 @@ label: 'ERCore Presentation'
 source:
   plugin: d7_node
   node_type: er_presentation
+  constants:
+    subpath: 'presentation'
 process:
   nid: nid
   uid: node_uid
@@ -36,7 +38,15 @@ process:
   field_ercore_nsf: field_er_nsf_ack
   field_ercore_ps_link: field_er_link
   field_ercore_ps_type: field_er_type_of_presentation
-  field_ercore_ps_upload: field_er_upload_file
+  path_concat:
+    plugin: concat
+    delimiter: "||"
+    source:
+      - constants/subpath
+      - field_er_upload_file/0/fid
+  field_ercore_ps_upload:
+    plugin: file_import
+    source: '@path_concat'
   field_ercore_ps_event: field_er_event
   status: status
   path/pathauto:
@@ -45,8 +55,4 @@ process:
   path/alias: url_alias
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - ercore_file
-    - ercore_user
-  optional: {  }
+migration_dependencies: { }

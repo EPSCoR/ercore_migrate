@@ -60,7 +60,4 @@ process:
   path/alias: url_alias
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - ercore_user
-  optional: {  }
+migration_dependencies: { }

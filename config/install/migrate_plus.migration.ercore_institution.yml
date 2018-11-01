@@ -40,6 +40,4 @@ process:
   path/alias: url_alias
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required: {  }
-  optional: {  }
+migration_dependencies: { }

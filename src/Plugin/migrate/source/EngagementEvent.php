@@ -4,9 +4,6 @@ namespace Drupal\ercore_migrate\Plugin\migrate\source;
 
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
 use Drupal\migrate\Row;
-use Drupal\Core\Database\Database;
-use Drupal\node\Entity\Node;
-use Drupal\paragraphs\Entity\Paragraph;
 
 /**
  * Source plugin for the Users.
@@ -66,7 +63,7 @@ class EngagementEvent extends SqlBase {
 
     // File.
     $query->addField('f', 'field_er_event_flier_fid', 'file');
-    $query->leftJoin('field_data_field_er_event_reminders', 'f', "f.entity_id = n.nid");
+    $query->leftJoin('field_data_field_er_event_flier', 'f', "f.entity_id = n.nid");
 
     return $query;
   }

@@ -11,6 +11,8 @@ label: 'ERCore Event Engagements'
 source:
   plugin: d7_node
   node_type: er_engagement
+  constants:
+    subpath: 'external-engagement'
 process:
   id: nid
   field_ercore_ee_ari_fac_f: field_er_ari_fac_female
@@ -71,12 +73,17 @@ process:
   field_ercore_ee_t_m: field_er_tot_male
   field_ercore_ee_t_u: field_er_tot_und
   field_ercore_ee_t_mn: field_er_tot_urm
-  field_ercore_ee_excel: field_er_ee_file
+  path_concat:
+    plugin: concat
+    delimiter: "||"
+    source:
+      - constants/subpath
+      - field_er_ee_file/0/fid
+  field_ercore_ee_excel:
+    plugin: file_import
+    source: '@path_concat'
   field_ercore_ee_estimated: field_er_estimated
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   default_bundle: ercore_external_engagement
-migration_dependencies:
-  required:
-    - ercore_file
-  optional: {  }
+migration_dependencies: { }

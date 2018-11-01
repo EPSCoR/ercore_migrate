@@ -11,6 +11,8 @@ label: 'ERCore Publication'
 source:
   plugin: d7_node
   node_type: er_publication
+  constants:
+    subpath: 'publication-upload'
 process:
   nid: nid
   uid: node_uid
@@ -52,7 +54,15 @@ process:
   field_ercore_pb_epscor: field_er_epscor_acknowledged_
   field_ercore_pb_citation: field_er_full_citation
   field_ercore_pb_link: field_er_link
-  field_ercore_pb_upload: field_er_upload_file
+  path_concat:
+    plugin: concat
+    delimiter: "||"
+    source:
+      - constants/subpath
+      - field_er_upload_file/0/fid
+  field_ercore_pb_upload:
+    plugin: file_import
+    source: '@path_concat'
   field_ercore_pb_data: field_er_pub_data
   field_ercore_pb_archived: field_er_pub_archived
   field_ercore_pb_arch_name: field_er_pub_what_archive_
@@ -63,8 +73,4 @@ process:
   path/alias: url_alias
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - ercore_file
-    - ercore_user
-  optional: {  }
+migration_dependencies: { }

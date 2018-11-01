@@ -11,6 +11,10 @@ label: 'User Migration'
 source:
   plugin: users
   track_changes: true
+  constants:
+    mentor_subpath: 'mentoring-plan'
+    rcri_subpath: 'rcr/in-person'
+    rcro_subpath: 'rcr/online'
 process:
   uid: uid
   name: name
@@ -96,23 +100,42 @@ process:
   field_ercore_user_start: start
   field_ercore_user_phone_mobile: phone_mobile
   field_ercore_user_phone_work: phone_work
-  field_ercore_user_mentor_plan: mentor_plan
+  mp_concat:
+    plugin: concat
+    delimiter: "||"
+    source:
+      - constants/mentor_subpath
+      - mentor_plan
+  field_ercore_user_mentor_plan:
+    plugin: file_import
+    source: '@mp_concat'
   field_ercore_user_link/url: link
   field_ercore_user_program: program
   field_ercore_user_race: race
   field_ercore_user_rcr_status: rcr_status
   field_ercore_user_rcr_per: rcr_per
-  field_ercore_user_rcr_per_up: rcr_per_up
+  rcri_concat:
+    plugin: concat
+    delimiter: "||"
+    source:
+      - constants/rcri_subpath
+      - rcr_per_up
+  field_ercore_user_rcr_per_up:
+    plugin: file_import
+    source: '@rcri_concat'
   field_ercore_user_rcr_on: rcr_on
-  field_ercore_user_rcr_on_up: rcr_on_up
+  rcro_concat:
+    plugin: concat
+    delimiter: "||"
+    source:
+      - constants/rcro_subpath
+      - rcr_on_up
+  field_ercore_user_rcr_on_up:
+    plugin: file_import
+    source: '@rcro_concat'
   field_ercore_user_veteran: veteran
   field_ercore_user_data_date: data_date
   field_ercore_user_address: address
 destination:
   plugin: 'entity:user'
-migration_dependencies:
-  required:
-    - ercore_component
-    - ercore_file
-    - ercore_institution
-  optional: {  }
+migration_dependencies: { }

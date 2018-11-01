@@ -18,6 +18,4 @@ process:
 destination:
   plugin: 'entity_reference_revisions:paragraph'
   default_bundle: ercore_collaborator
-migration_dependencies:
-  required: {  }
-  optional: {  }
+migration_dependencies: { }
