@@ -45,7 +45,7 @@ process:
   status: status
   path/pathauto:
     plugin: default_value
-    default_value: 0
+    default_value: 1
   path/alias: url_alias
   field_ercore_organizer: field_er_user_entity_reference
   field_ercore_hn_date:
