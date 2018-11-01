@@ -25,9 +25,6 @@ process:
   field_ercore_ee_ari_stu_t: field_er_ari_stu_total
   field_ercore_ee_ari_stu_u: field_er_ari_stu_und
   field_ercore_ee_ari_stu_mn: field_er_ari_stu_urm
-  field_ercore_ee_disable_file_alt:
-    plugin: default_value
-    default_value: 1
   field_ercore_ee_k12_dir_f: field_er_k12i_stud_female
   field_ercore_ee_k12_dir_m: field_er_k12i_stud_male
   field_ercore_ee_k12_dir_t: field_er_k12i_stud_total
